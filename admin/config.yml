@@ -1,17 +1,18 @@
 backend:
-  name: github
-    repo: iqshadowdigitalmedia/iqshadowdigitalmedia.github.io
-      branch: main
+  name: git-gateway
+  branch: main
 
-      media_folder: "images"
-      public_folder: "/images"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
-      collections:
-        - name: "posts"
-            label: "Posts"
-                folder: "posts"
-                    create: true
-                        fields:
-                              - {label: "Title", name: "title", widget: "string"}
-                                    - {label: "Date", name: "date", widget: "datetime"}
-                                          - {label: "Body", name: "body", widget: "markdown"}
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
