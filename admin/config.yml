@@ -1,10 +1,3 @@
-backend:
-  name: github
-  repo: iqshadowdigitalmedia/iqshadowdigitalmedia.github.io
-  branch: main
-  base_url: https://api.netlify.com
-  
-site_id: fa1eed45-b565-4d98-8dff-d0c45894c120
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
