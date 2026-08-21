@@ -1,13 +1,5 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to IQ Shadow Digital Media</title>
-</head>
-<body>
-  <h1>Welcome to IQ Shadow Digital Media</h1>
-  <p>यह मेरी पहली वेबसाइट है, जो GitHub पर होस्ट की गई है!</p>
+FROM wordpress:latest
 
-</body>
-</html>
+ENV PORT=10000
+EXPOSE 10000
+RUN sed -i "s/80/\${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-available/000-default.conf
